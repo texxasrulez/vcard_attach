@@ -49,7 +49,7 @@
                     $script = '$(".button").each(function(){if($(this).attr("onclick") == "history.back()"){$(this).attr("onclick", "self.close()");}});var temp=document.location.search.split("&_create=");$($(".contactfieldcontent").children().get(0)).prop("readonly", true);if(temp[1]){$($(".contactfieldcontent").children().get(0)).val(temp[1]);}$($(".deletebutton").get(0)).remove();';
                     $rcmail->output->add_script($script, 'docready');
                 }
-            } else if ($args['template'] == 'addressbook' && rcube_utils::get_input_value('_source', RCUBE_INPUT_GPC) == 'collected') {
+            } else if ($args['template'] == 'addressbook' && rcube_utils::get_input_value('_source', 'RCUBE_INPUT_GPC') == 'collected') {
                 $script = 'if(self.location==parent.location){try{opener.parent.document.getElementById("preferences-frame").src="./?_action=edit-prefs&_task=settings&_section=compose&_framed=1";}catch(e){};self.close()};';
                 $script = html::tag('script', array('type' => 'text/javascript'), $script);
                 $args['content'] = str_replace('<body', $script, $args['content'].
