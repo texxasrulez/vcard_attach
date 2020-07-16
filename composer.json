@@ -4,7 +4,7 @@
     "description": "Add your vCard as an attachment to your outgoing emails.",
     "homepage": "https://github.com/texxasrulez/vcard_attach",
     "license": "GPL-3.0-only",
-    "version": "0.1",
+    "version": "0.2",
     "authors": [
         {
             "name": "Gene Hawkins",
