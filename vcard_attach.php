@@ -9,6 +9,8 @@
 
         function init() {
             $rcmail = rcmail::get_instance();
+			$this->load_config();
+			
             if ($rcmail->config->get('attach_vcard')) {
                 $this->add_hook('message_compose', array($this, 'message_compose'));
                 $this->add_hook('message_outgoing_body', array($this, 'create_vcard'));
