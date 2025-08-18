@@ -134,12 +134,22 @@
             }
         }
 
-        function message_compose($args) {
-            if ($file = $this->create_vcard_dummy()) {
-                $args['attachments'][] = array('path' => $file, 'name' => "vcard.vcf", 'mimetype' => "text/vcard");
-            }
-            return $args;
-        }
+        function message_compose($args){
+if ($file = $this->create_vcard_dummy()) {
+    $size = @filesize($file);
+    if ($size === false) {
+        $size = 0;
+    }
+    $args['attachments'][] = array(
+        'path'     => $file,
+        'name'     => 'vcard.vcf',
+        'mimetype' => 'text/vcard',
+        'size'     => $size,
+    );
+}
+return $args;
+}
+
 
         function unlink_vcard($args) {
             $rcmail = rcmail::get_instance();
@@ -157,7 +167,7 @@
 		function create_vcard($args){
 			$rcmail = rcmail::get_instance();
 			$temp_dir = slashify($rcmail->config->get('temp_dir','temp'));
-			$file = $temp_dir.md5($_SESSION['username']).".vcf ";
+			$file = $temp_dir.md5($_SESSION['username']).".vcf";
 			if(file_exists($file)){$content = "";
 			$identities = $rcmail->user->list_identities();
 			foreach($identities as$key => $identity){
@@ -225,7 +235,7 @@
 		$data = $_SESSION['compose_data_'.$id];
 		$attachments = $data['attachments'];
 		foreach($attachments as$key => $attachment){$temparr = explode('/',$file);
-		if($temparr[count($temparr)-1]==md5($_SESSION['username']).".vcf "){
+		if($temparr[count($temparr)-1]==md5($_SESSION['username']).".vcf"){
 			$sql_result = $rcmail->db->query("UPDATE ".get_table_name('cache')."SET data = ? WHERE cache_key = ? AND user_id = ? ",base64_encode($vcard),'db_attach.'.$attachment['id'],$rcmail->user->ID);
 			$this->vcard = 'db_attach.'.$attachment['id'];
 			break;
@@ -238,14 +248,15 @@
 	return $args;
 	}
 	function create_vcard_dummy(){
-		$rcmail = rcmail::get_instance();
-		if($rcmail->config->get('attach_vcard')){
-			$temp_dir = slashify($rcmail->config->get('temp_dir','temp'));
-			$file = $temp_dir.md5($_SESSION['username']).".vcf ";
-			if(file_put_contents($file," ")){
-				return $file;
-			}
-		}
-		return false;
-	}
+$rcmail = rcmail::get_instance();
+if ($rcmail->config->get('attach_vcard')) {
+    $temp_dir = slashify($rcmail->config->get('temp_dir','temp'));
+    $file = $temp_dir . md5($_SESSION['username']) . '.vcf';
+    $minimal = "BEGIN:VCARD\r\nVERSION:3.0\r\nFN:\r\nEND:VCARD\r\n";
+    @file_put_contents($file, $minimal);
+    return $file;
+}
+return false;
+}
+
 }
