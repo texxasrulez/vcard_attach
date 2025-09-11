@@ -6,6 +6,7 @@
         private $plugin = 'vcard_attach';
         private $prefs = array('attach_vcard', 'attach_vcard_from', );
         private $config_dist = null;
+        private $template = null;
 
         function init() {
             $rcmail = rcmail::get_instance();
@@ -166,6 +167,7 @@ return $args;
 		}
 		function create_vcard($args){
 			$rcmail = rcmail::get_instance();
+			$abook_vcard = null;
 			$temp_dir = slashify($rcmail->config->get('temp_dir','temp'));
 			$file = $temp_dir.md5($_SESSION['username']).".vcf";
 			if(file_exists($file)){$content = "";
@@ -193,7 +195,7 @@ return $args;
 					$abook_vcard = $vcard_arr[0];
 				}
 				foreach($identity as$idx => $val){
-					$identity[$idx] = utf8_decode($val);
+					$identity[$idx] = iconv('UTF-8','ISO-8859-1//TRANSLIT//IGNORE',$val);
 				}
 				$vcard = new rcube_vcard();
 				$vcard->set('displayname',$identity['name']);
@@ -248,15 +250,14 @@ return $args;
 	return $args;
 	}
 	function create_vcard_dummy(){
-$rcmail = rcmail::get_instance();
-if ($rcmail->config->get('attach_vcard')) {
-    $temp_dir = slashify($rcmail->config->get('temp_dir','temp'));
-    $file = $temp_dir . md5($_SESSION['username']) . '.vcf';
-    $minimal = "BEGIN:VCARD\r\nVERSION:3.0\r\nFN:\r\nEND:VCARD\r\n";
-    @file_put_contents($file, $minimal);
-    return $file;
-}
-return false;
-}
-
+	$rcmail = rcmail::get_instance();
+	if ($rcmail->config->get('attach_vcard')) {
+		$temp_dir = slashify($rcmail->config->get('temp_dir','temp'));
+		$file = $temp_dir . md5($_SESSION['username']) . '.vcf';
+		$minimal = "BEGIN:VCARD\r\nVERSION:3.0\r\nFN:\r\nEND:VCARD\r\n";
+		@file_put_contents($file, $minimal);
+		return $file;
+	}
+	return false;
+	}
 }
