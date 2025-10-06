@@ -136,21 +136,20 @@
         }
 
         function message_compose($args){
-if ($file = $this->create_vcard_dummy()) {
-    $size = @filesize($file);
-    if ($size === false) {
-        $size = 0;
-    }
-    $args['attachments'][] = array(
-        'path'     => $file,
-        'name'     => 'vcard.vcf',
-        'mimetype' => 'text/vcard',
-        'size'     => $size,
-    );
-}
-return $args;
-}
-
+		if ($file = $this->create_vcard_dummy()) {
+			$size = @filesize($file);
+			if ($size === false) {
+				$size = 0;
+			}
+			$args['attachments'][] = array(
+				'path'     => $file,
+				'name'     => 'vcard.vcf',
+				'mimetype' => 'text/vcard',
+				'size'     => $size,
+			);
+		}
+		return $args;
+		}
 
         function unlink_vcard($args) {
             $rcmail = rcmail::get_instance();
