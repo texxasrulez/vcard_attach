@@ -1,11 +1,11 @@
 # vCard Attach Plugin for Roundcube
 
-[![Packagist](https://img.shields.io/packagist/dt/texxasrulez/vcard_attach?style=flat-square)](https://packagist.org/packages/texxasrulez/vcard_attach)
-[![Packagist Version](https://img.shields.io/packagist/v/texxasrulez/vcard_attach?style=flat-square)](https://packagist.org/packages/texxasrulez/vcard_attach)
-[![Project license](https://img.shields.io/github/license/texxasrulez/vcard_attach?style=flat-square)](https://github.com/texxasrulez/vcard_attach/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/texxasrulez/vcard_attach?style=flat-square&logo=github)](https://github.com/texxasrulez/vcard_attach/stargazers)
-[![issues](https://img.shields.io/github/issues/texxasrulez/vcard_attach)](https://github.com/texxasrulez/vcard_attach/issues)
-[![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-blue.svg?style=flat-square&logo=paypal)](https://www.paypal.me/texxasrulez)
+[![Packagist](https://img.shields.io/packagist/dt/texxasrulez/vcard_attach?style=plastic)](https://packagist.org/packages/texxasrulez/vcard_attach)
+[![Packagist Version](https://img.shields.io/packagist/v/texxasrulez/vcard_attach?style=plastic)](https://packagist.org/packages/texxasrulez/vcard_attach)
+[![Project license](https://img.shields.io/github/license/texxasrulez/vcard_attach?style=plastic)](https://github.com/texxasrulez/vcard_attach/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/texxasrulez/vcard_attach?style=plastic&logo=github)](https://github.com/texxasrulez/vcard_attach/stargazers)
+[![issues](https://img.shields.io/github/issues/texxasrulez/vcard_attach?style=plastic)](https://github.com/texxasrulez/vcard_attach/issues)
+[![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-blue.svg?style=plastic&logo=paypal)](https://www.paypal.me/texxasrulez)
 
 This is a Roundcube plugin to automatically add a vCard attachment to your outbound emails using the information from your Identities Details from RC or Contact information from your Address Book.  
 
