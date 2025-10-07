@@ -1,7 +1,7 @@
 # vCard Attach Plugin for Roundcube
 
 [![Packagist](https://img.shields.io/packagist/dt/texxasrulez/vcard_attach?style=plastic)](https://packagist.org/packages/texxasrulez/vcard_attach)
-[![Packagist Version](https://img.shields.io/packagist/v/texxasrulez/vcard_attach?style=plastic)](https://packagist.org/packages/texxasrulez/vcard_attach)
+[![Packagist Version](https://img.shields.io/packagist/v/texxasrulez/vcard_attach?style=plastic&logo=packagist&logoColor=white)](https://packagist.org/packages/texxasrulez/vcard_attach)
 [![Project license](https://img.shields.io/github/license/texxasrulez/vcard_attach?style=plastic)](https://github.com/texxasrulez/vcard_attach/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/texxasrulez/vcard_attach?style=plastic&logo=github)](https://github.com/texxasrulez/vcard_attach/stargazers)
 [![issues](https://img.shields.io/github/issues/texxasrulez/vcard_attach?style=plastic)](https://github.com/texxasrulez/vcard_attach/issues)
