@@ -1,0 +1,108 @@
+/*
+ * Keep styling skin-aware by using Roundcube CSS variables with fallbacks.
+ */
+
+#vcard_attach_contacts.vcard-attach-contact-box {
+  font-size: 11px;
+  padding: 15px;
+  margin-top: -7px;
+  display: inline;
+  border: 1px solid var(--layout-border-color, var(--color-border, #ababab));
+  background: transparent;
+  color: var(--layout-content-text, var(--color-main-text, inherit));
+}
+
+#vcard_attach_contacts .vcard-attach-contact-legend {
+  font-size: 12px;
+  padding-bottom: 0;
+  color: inherit;
+}
+
+#vcard_attach_contacts .vcard-attach-contact-list {
+  list-style: decimal;
+  margin-top: -10px;
+  margin-left: -25px;
+  margin-bottom: 0;
+  color: inherit;
+}
+
+#vcard_attach_contacts .vcard-attach-contact-list a {
+  color: var(--layout-link-color, var(--color-link, inherit));
+}
+
+.vcard-attach-source-table .vcard-attach-source-select-cell {
+  width: 1px;
+  background: transparent;
+}
+
+.vcard-attach-source-select {
+  margin-left: -6px;
+  color: inherit;
+  background: transparent;
+  border-color: var(--layout-border-color, var(--color-border, #ababab));
+}
+
+.vcard-attach-source-table,
+.vcard-attach-source-table td,
+#vcard_attach_contacts .vcard-attach-contact-list li {
+  color: inherit;
+  background: transparent;
+}
+
+/* Force vCard attachment row/chip to follow active skin */
+body.task-mail.action-compose .vcardattachment,
+body.task-mail.action-compose li.vcardattachment,
+body.task-mail.action-compose .attachmentslist .vcardattachment,
+body.task-mail.action-compose #compose-attachments .vcardattachment,
+body.task-mail.action-compose #attachmentlist .vcardattachment {
+  background-color: var(--vcard-attach-compose-bg, transparent) !important;
+  background-image: none !important;
+  color: var(--vcard-attach-panel-text, inherit) !important;
+  border-color: var(--vcard-attach-border, currentColor) !important;
+}
+
+body.task-mail.action-compose .vcardattachment a,
+body.task-mail.action-compose li.vcardattachment a {
+  color: var(--vcard-attach-link, inherit) !important;
+}
+
+/* Message-view vCard import panel skin support */
+body.task-mail .vcardattachment,
+body.task-mail li.vcardattachment,
+body.task-mail .attachmentslist .vcardattachment,
+body.task-mail #message-objects .vcardattachment,
+body.task-mail #message-content .vcardattachment {
+  background-color: var(--vcard-attach-compose-bg, transparent) !important;
+  background-image: none !important;
+  color: var(--vcard-attach-panel-text, inherit) !important;
+  border-color: var(--vcard-attach-border, currentColor) !important;
+}
+
+body.task-mail .vcardattachment input,
+body.task-mail .vcardattachment button,
+body.task-mail .vcardattachment .button,
+body.task-mail .vcardattachment .btn {
+  background-color: var(--vcard-attach-compose-bg, transparent) !important;
+  background-image: none !important;
+  color: var(--vcard-attach-panel-text, inherit) !important;
+  border-color: var(--vcard-attach-border, currentColor) !important;
+}
+
+body.task-mail .vcardattachment a {
+  color: var(--vcard-attach-link, inherit) !important;
+}
+
+/* Strong override for Roundcube boxinformation defaults in message view */
+body.task-mail p.vcardattachment.boxinformation,
+body.task-mail p.vcardattachment.aligned-buttons.boxinformation,
+body.task-mail .vcardattachment.aligned-buttons.boxinformation,
+body.task-mail .vcardattachment.boxinformation {
+  border: 1px solid var(--vcard-attach-border, currentColor) !important;
+  color: var(--vcard-attach-panel-text, inherit) !important;
+  background-color: var(--vcard-attach-compose-bg, transparent) !important;
+}
+
+body.task-mail .vcardattachment.boxinformation span,
+body.task-mail .vcardattachment.aligned-buttons.boxinformation span {
+  color: var(--vcard-attach-panel-text, inherit) !important;
+}
