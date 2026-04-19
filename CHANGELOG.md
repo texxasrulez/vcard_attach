@@ -14,3 +14,7 @@ All notable changes to `vcard_attach` should be documented in this file.
 ## [1.0.0] - 2026-04-17
 
 - Updated for Roundcube 1.7 requirements
+
+## [1.0.1] - 2026-04-19
+
+- Improved CSS
