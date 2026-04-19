@@ -27,8 +27,4 @@
 // False by default
 $config['attach_vcard'] = false;
 
-// Runtime patch debug logging to browser console. (true : false)
-// False by default. Enable temporarily for troubleshooting only.
-$config['vcard_attach_skin_runtime_patch_debug'] = false;
-
 ?>

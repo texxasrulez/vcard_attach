@@ -24,13 +24,9 @@ class vcard_attach extends rcube_plugin
 
     function init()
     {
-        $rcmail = rcmail::get_instance();
         $this->load_config();
         $this->include_stylesheet($this->local_skin_path() . '/vcard_attach.css');
-        if ($rcmail->task == 'mail') {
-            $rcmail->output->set_env('vcard_attach_skin_runtime_patch_debug', (bool) $rcmail->config->get('vcard_attach_skin_runtime_patch_debug', false));
-            $this->include_script('vcard_attach_skin.js');
-        }
+        $rcmail = rcmail::get_instance();
 
         if ($rcmail->config->get('attach_vcard')) {
             $this->add_hook('message_compose', array($this, 'message_compose'));
