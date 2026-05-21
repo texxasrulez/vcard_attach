@@ -1,9 +1,9 @@
 @import "../../vcard_attach.css";
 
 :root {
-  --vcard-attach-panel-bg: #fbe4d7;
+  --vcard-attach-panel-bg: #f1d4c4;
   --vcard-attach-panel-text: #742d1d;
-  --vcard-attach-border: #ad5c2a;
+  --vcard-attach-border: #742d1d;
   --vcard-attach-link: #9c4f19;
   --vcard-attach-compose-bg: transparent;
 }

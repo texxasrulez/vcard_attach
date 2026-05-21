@@ -1,7 +1,7 @@
 <?php
 class vcard_attach extends rcube_plugin
 {
-    const PLUGIN_VERSION = '1.0.0';
+    const PLUGIN_VERSION = '1.1.0';
     const PLUGIN_INFO = array(
         'name' => 'vcard_attach',
         'vendor' => 'Gene Hawkins',

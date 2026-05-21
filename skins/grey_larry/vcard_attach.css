@@ -3,7 +3,7 @@
 :root {
   --vcard-attach-panel-bg: #d4d4d4;
   --vcard-attach-panel-text: #434343;
-  --vcard-attach-border: #9e9e9e;
+  --vcard-attach-border: #434343;
   --vcard-attach-link: #4f6f8f;
   --vcard-attach-compose-bg: transparent;
 }
